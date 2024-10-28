@@ -1,7 +1,6 @@
 #Run the followins installations:
-#pip3 install openai 
+#pip3 install openai
 #pip3 install youtube-transcript-api
-
 
 from youtube_transcript_api import YouTubeTranscriptApi
 from openai import OpenAI
