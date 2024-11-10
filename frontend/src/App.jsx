@@ -7,6 +7,7 @@ import Summary from './pages/Summary'
 import CardPage from './pages/CardPage'
 import FormPage from './pages/FormPage'
 import Home from './components/Home'
+import Test from './pages/Test'
 import './index.css'
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
       <Route path='/about' element={<About />} />
       <Route path='/summary' element={<Summary />} />
       <Route path='/form' element={<FormPage />} />
-      <Route path='/card' element={<CardPage />} />
+      <Route path='/card' element={<CardPage />} /> 
+      <Route path='/test' element={<Test />} /> 
     </Route>
     )
   );
