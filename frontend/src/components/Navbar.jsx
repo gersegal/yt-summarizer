@@ -65,6 +65,9 @@ const Navbar = () => {
                 <NavLink className={linkClass} to="/form" >
                   Form
                 </NavLink>
+                <NavLink className={linkClass} to="/card" >
+                  Card
+                </NavLink>
               </div>
             </div>
           </div>

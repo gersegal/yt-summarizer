@@ -9,9 +9,13 @@ const LoadingScreen = ({ size, color }) => {
   }, [count]);
 
   return (
-    <div className="content-center">
+
+    <div class="flex justify-center items-center"> 
+      <div class="bg-white w-3/12 py-24">
       <PacmanLoader size={size} color={color} />
+      </div>
     </div>
+  
   );
 };
 
