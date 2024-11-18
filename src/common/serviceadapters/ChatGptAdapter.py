@@ -1,9 +1,9 @@
 import os
 from dotenv import load_dotenv
 from openai import OpenAI
-from .enums.LLMModel import LLMModel
-from .enums.Prompt import Prompt
-from .enums.Role import Role
+from ..enums.LLMModel import LLMModel
+from ..enums.Prompt import Prompt
+from ..enums.Role import Role
 
 # https://dagster.io/blog/python-environment-variables
 class ChatGptAdapter:

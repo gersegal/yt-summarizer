@@ -2,12 +2,16 @@
 # https://vite.dev/guide/
 # https://www.solidjs.com/
 
+import os
+from common.enums.DatabaseType import DatabaseType
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import uvicorn
 from dotenv import load_dotenv
 from typing import List
+from common.factory.DatabaseFactory import DatabaseFactory
+
 
 from src.common.serviceadapters.ChatGptAdapter import ChatGptAdapter
 from src.common.serviceadapters.YoutubeTranscriptAdapter import YoutubeTranscriptAdapter
@@ -35,6 +39,8 @@ class Summary(BaseModel):
 @app.post("/summary/", response_model=Summary)
 async def create_item(summary: Summary):
     # Optionally add some logic to check for duplicates or validation
+    if
+    transcript = transcriber.transcribe(video_url)
     return summary
 
 @app.get("/summary", response_model=Summary)
@@ -52,4 +58,5 @@ if __name__ == "__main__":
     load_dotenv()
     transcriber = YoutubeTranscriptAdapter()
     gpt = ChatGptAdapter()
+    videoTranscriptDb = DatabaseFactory.get(os.environ["VIDEO_TRANSCRIPT_DATABASE"], DatabaseType.VIDEO_TRANSCRIPT)
     uvicorn.run(app, host="0.0.0.0", port=8000)
