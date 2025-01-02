@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react';
 
 const CardButtons = () => {
@@ -8,14 +8,23 @@ const CardButtons = () => {
       setOpen((prev) => !prev);
       console.log(open);
     };
+
+
+    useEffect(() => {
+        const closeDropdown = () => {
+            console.log("Click to close dropdown")
+        }
+        document.body.addEventListener('click', closeDropdown);
+      }, []);
       
   return (
     
     <>
-        <div class="px-5 pb-5">
+        <div class="px-0 pb-5">
 
             <div class="flex items-center justify-between">
                 <div class="relative inline-block text-left">
+                    
                     <div>
                         <button onClick={handleDropdown} type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
                         Tone
@@ -28,7 +37,7 @@ const CardButtons = () => {
                     {open ? (
                         <>
                         <div class="absolute z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-                            <div class="py-1" role="none">
+                            <div id="dropdownselect" class="py-1" role="none">
                             <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0">Journalist</a>
                             <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-1">Storyteller</a>
                             <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-2">Informative</a>
@@ -38,7 +47,7 @@ const CardButtons = () => {
                         ) : null}
 
                 </div>
-                <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Generate</a>
+                <a href="#" class="ml-5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Generate</a>
             </div>
         </div> 
     </>

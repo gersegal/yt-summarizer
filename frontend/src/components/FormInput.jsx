@@ -1,4 +1,8 @@
 import axios from "axios";
+import CardCheckbox from "../components/Card/CardCheckbox";
+import DropdownButton from "../components/DropdownButton";
+import Marquee from "./Marquee";
+
 
 export const FormInput = ({ setOutput, setLoading }) => {
   const handleSubmit = () => {
@@ -18,22 +22,22 @@ export const FormInput = ({ setOutput, setLoading }) => {
       });
   };
   return (
-    <form class="w-full max-w-lg">
+    <form class="max-w-md mx-auto align-middle justify-center"> 
       <div class="flex flex-wrap -mx-3 mb-6">
         <div class="w-full px-3">
-          <label
-            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            for="grid-password"
-          >
-            Youtube Video Link
-          </label>
           <input
             class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
             id="grid-password"
             type="text"
-            placeholder=""
+            placeholder="Inser Youtube Video Link"
           />
-          <p class="text-gray-600 text-xs italic">Validation field</p>
+          <CardCheckbox />
+          <div class="mt-5"></div>
+          <DropdownButton />
+          <div class="mt-5"></div>
+          {/* <Marquee /> */}
+          <div class="mt-5"></div>
+          This is where we'll show the active inputs 
         </div>
       </div>
       <div class="flex items-center justify-between mb-6">
@@ -45,6 +49,7 @@ export const FormInput = ({ setOutput, setLoading }) => {
           Submit link
         </button>
       </div>
+      <div class="mt-5"></div>
     </form>
   );
 };

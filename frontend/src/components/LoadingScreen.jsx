@@ -11,7 +11,7 @@ const LoadingScreen = ({ size, color }) => {
   return (
 
     <div class="flex justify-center items-center"> 
-      <div class="bg-white w-3/12 py-24">
+      <div class="bg-gray-900 w-3/12 py-24">
       <PacmanLoader size={size} color={color} />
       </div>
     </div>

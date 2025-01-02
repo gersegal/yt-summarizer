@@ -59,9 +59,6 @@ const Navbar = () => {
                 <NavLink className={linkClass} to="/about" >
                   About
                 </NavLink>
-                <NavLink className={linkClass} to="/summary" >
-                  Summary
-                </NavLink>
                 <NavLink className={linkClass} to="/form" >
                   Form
                 </NavLink>
@@ -88,9 +85,6 @@ const Navbar = () => {
           </NavLink>
           <NavLink onClick={handleMenu}  className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white" to="/about" >
             About
-          </NavLink>
-          <NavLink onClick={handleMenu}  className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white" to="/summary" >
-            Summary
           </NavLink>
           <NavLink onClick={handleMenu}  className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white" to="/form" >
             Form
